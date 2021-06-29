@@ -1,0 +1,1409 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#LogOrSign {
+    overflow: hidden;
+}
+
+.one-line {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.logOrSign .otherCard{
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 5px 10px;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.logOrSign .otherCard .acceptTermsOfUse,
+.logOrSign .otherCard .forgotPassword{
+    position: relative;
+    z-index: 5;
+    width: 800px;
+    height: 500px;
+    margin: 0 0 0 50%;
+    transform: translateX(-50%) ;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: #fff;
+    color:var(--color-secondary-purple);
+    border-radius: 20px;
+}
+
+
+
+.logOrSign .otherCard .head{
+    position: relative;
+    height: 50px;
+    width: calc(100% - 30px);
+    margin: 5px 30px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.logOrSign .otherCard .head .close{
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.logOrSign .otherCard .head .btn-close-card{
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: var(--color-secondary-purple);
+    color: #fff;
+    border: none;
+}
+
+.logOrSign .otherCard .head img{
+    margin-top: 2px;
+    height: 15px;
+    cursor: pointer;
+    filter: invert(100%);
+    border: none;
+}
+
+.logOrSign .otherCard .head span{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    right: 0px;
+    display: none;
+    width: 60px;
+    height: 22px;
+    color: #fff;
+    padding-top: 8px;
+    border-radius: 15px;
+    background-color: var(--color-secondary-purple);
+}
+
+
+
+.logOrSign .otherCard .body{
+    position: relative;
+    overflow-y: auto;
+    margin: 0px 20px 20px 20px;
+    justify-content: center;
+    text-align: justify;
+}
+
+.logOrSign .notification{
+    position: absolute;
+    top: 0;
+    font-weight: bold;
+    left: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 5px 10px;
+    height: 50px;
+    width: 100%;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: aliceblue;
+}
+
+.container .left {
+    float: left;
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    height: 100%;
+    /*background-color: rgb(47, 45, 56);*/
+    text-align: center;
+}
+
+.container .left::before {
+    display: inherit;
+    content: "";
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../assets/img/background.png);
+    -webkit-background-size: cover;
+    -webkit-filter: blur(2px);
+}
+
+.container .left .frame {
+    position: relative;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    box-sizing: border-box;
+    margin: 15% 10%;
+    border-radius: 15px;
+    background-position: top;
+    background-image: url(../assets/img/background.png);
+    padding: 20px;
+    perspective: 1000px;
+    z-index: 1;
+}
+
+.container .left .frame .inner-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.container .left .frame .inner-box .up {
+    margin: 25px 0px;
+}
+
+.container .left .frame .inner-box .up h3 {
+    font-size: 30px;
+    color: rgb(46, 46, 46);
+    font-weight: bolder;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.248);
+}
+
+.container .left .frame .inner-box .down {
+    width: 100%;
+    height: 300px;
+}
+
+.container .left .frame .inner-box .down .form-input {
+    width: 70%;
+    height: 25px;
+    padding: 5px;
+    border: none;
+    border-top: 2px solid aliceblue;
+    border-bottom: 2px solid rgb(32, 22, 90);
+    margin: 6px 5px;
+    border-radius: 5px;
+    transition: border 0.8s;
+}
+
+.container .left .frame .inner-box .down .form-input:focus {
+    border: 2px solid rgb(32, 22, 90);
+    outline: none;
+    transition: border 0.8s;
+}
+
+.container .left .frame .inner-box .down .form-input::placeholder {
+    text-align: center;
+    color: rgba(32, 22, 90, 0.672);
+}
+
+.container .left .frame .inner-box .down .form-button {
+    cursor: pointer;
+    width: 60%;
+    height: 40px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: rgb(32, 22, 90);
+    color: aliceblue;
+    border: none;
+    margin: 6px 20%;
+    border-radius: 15px;
+    transition: all 0.8s;
+}
+
+.container .left .frame .inner-box .down .form-button:hover {
+    background-color: rgb(38, 22, 128);
+    color: aliceblue;
+    border: 2px solid rgb(32, 22, 90);
+    outline: none;
+    transition: all 0.8s;
+}
+
+.container .left .frame .inner-box .down .check-case {
+    display: inline-flex;
+    font-size: 10px;
+    margin: 5px 0px;
+}
+
+.container .left .frame .inner-box .down .check-case .form-checkbox {
+    margin: 0px 5px;
+    width: 15px;
+}
+
+.container .left .frame .inner-box .down p {
+    width: 100%;
+    margin: 0px 5px;
+}
+
+.container .left .frame .inner-box .down .links {
+    color: rgb(32, 22, 90);
+}
+
+.container .left .frame .inner-box .down .links a {
+    cursor: pointer;
+    font-size: 10px;
+    color: rgb(32, 22, 90);
+    text-decoration: none;
+}
+
+.container .left .frame .inner-box .down .links a:hover {
+    text-decoration: underline rgb(58, 6, 75) 2px;
+}
+
+.container .left .frame .inner-box .front-card,
+.back-card {
+    display: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+}
+
+.container .left .frame .inner-box .front-card .in-card {
+    padding: 10px 0px;
+    margin: 100px 0px;
+}
+
+.container .left .frame .inner-box .front-card .in-card input+.check-case {
+    margin: 15px 0px;
+}
+
+.container .left .frame .inner-box .back-card {
+    margin-top: -580px;
+    transform: rotateY(180deg);
+}
+
+.container .right {
+    float: right;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-color: var(--color-primary-gray);
+    text-align: center;
+    z-index: 1;
+}
+
+.container .right .inside .title {
+    display: grid;
+    width: 100%;
+    height: 120px;
+    /*background: linear-gradient(rgba(30, 2, 133,0.8),rgba(30, 2, 133,0.8)) ;*/
+    background-color: var(--color-primary-gray);
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "left right";
+}
+
+.container .right .inside .title .brand-logo {
+    width: 50%;
+}
+
+.container .right .inside .title .logo-img {
+    grid-area: left;
+    padding: 15px 0px;
+}
+
+.container .right .inside .title .logo-text {
+    display: grid;
+    grid-auto-rows: "text-ipg text-isti";
+    grid-area: right;
+    padding: 15px 0px;
+}
+
+.container .right .inside .title .logo-text h2 {
+    font-family: cream;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 18px;
+    width: 100%;
+    color: var(--color-primary-font-white);
+}
+
+.container .right .inside .title .logo-text .text-ipg {
+    margin: 5px 2px;
+    animation: rightToLeft 2s linear;
+}
+
+.container .right .inside .title .logo-text .text-isti {
+    margin: 5px 2px;
+    animation: rightToLeft 2s linear;
+}
+
+.container .right .inside .title .logo-text .text-ipg span,
+.container .nav-bar .logo .logo-text .text-ipg span {
+    animation: ColorToRed 3s ease-in-out infinite alternate;
+    color: red;
+}
+
+.container .right .inside .title .logo-text .text-isti span,
+.container .nav-bar .logo .logo-text .text-isti span {
+    animation: ColorToGreen 3s ease-in-out infinite alternate forwards 3s;
+    color: white;
+}
+
+.container .right .inside .description {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(#6caffa36, #06768a90), url(../assets/img/Student1.jpg);
+}
+
+.container .right .inside .description .centered {
+    position: relative;
+    height: 20%;
+    width: 100%;
+    background-color: #1c053746;
+    top: 45vh;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+
+.container .right .inside .description .centered p {
+    font-family: cream;
+    position: inherit;
+    font-size: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: whitesmoke;
+}
+
+.container .nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "logo nav-links";
+    height: 10%;
+    padding: 8px 5px;
+    background-color: var(--color-secondary-purple);
+}
+
+.container .nav-bar .logo {
+    grid-area: logo;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2px;
+}
+
+.container .nav-bar .logo .img {
+    width: 100px;
+}
+
+.container .nav-bar .logo .img img {
+    width: 50px;
+    margin: 0 15px;
+}
+
+.container .nav-bar .logo .logo-text {
+    font-size: 10px;
+    text-align: center;
+    padding: 10px 2px;
+    color: aliceblue;
+}
+
+.container .nav-bar .nav-links {
+    padding: 10px 2px;
+    grid-area: nav-links;
+    width: 100%;
+    text-align: right;
+}
+
+.container .nav-bar .nav-links a {
+    height: 60px;
+    margin: 5px 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: var(--color-primary-font-white);
+    text-decoration: none;
+    padding: 10px 10px;
+}
+
+.container .nav-bar .nav-links a:hover {
+    background-color: rgba(197, 198, 199, 0.253);
+    border-radius: 0 10px 0 10px;
+}
+
+.container .nav-bar .nav-links a img {
+    width: 30px;
+    margin-bottom: -7px;
+    filter: invert(100%);
+}
+
+.container .nav-bar .nav-links a strong img {
+    width: 20px;
+    margin-bottom: -4px;
+    transition: .2s;
+}
+
+.container .nav-bar .nav-links a:hover>strong img {
+    transform: rotate(-90deg);
+}
+
+.container .nav-bar .account-details {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 300px;
+    height: 220px;
+    padding: 20px 0 0;
+    text-align: left;
+    background-color: var(--color-secondary-purple);
+    position: absolute;
+    top: 55px;
+    right: 0px;
+    transition: .5s;
+}
+
+.container .nav-bar #account:hover>.account-details {
+    display: flex;
+    transition: .5s;
+    z-index: 10;
+}
+
+.container .nav-bar .account-details a {
+    padding: 10px 10px;
+}
+
+
+.container .nav-bar .nav-links .router-link-exact-active {
+    border-bottom: 3px solid #fff;
+}
+
+.container .body {
+    position: absolute;
+    height: 84%;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+}
+
+.container .body .home-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(var(--color-secondary-purple), var(--color-primary-purple));
+    text-align: center;
+}
+
+.container .body .school-banner {
+    height: 40vh;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+    text-align: center;
+    align-items: center;
+}
+
+.container .body .school-banner h1 {
+    font-family: Lanterosy;
+    font-size: 60px;
+    color: #fff;
+}
+
+.container .body .school-banner a {
+    position: absolute;
+    padding: 20px 80px 20px 10px;
+    width: 600px;
+    height: 80px;
+    margin: 20px 0px;
+    transform: translateX(-50%);
+    background-color: #fff;
+    font-size: 60px;
+    text-decoration: none;
+    color: var(--color-secondary-purple);
+    border-radius: 50px;
+    transition: .5s;
+}
+
+.container .body .school-banner a:hover {
+    background-color: var(--color-secondary-purple);
+    box-shadow: 15px 15px 10px rgb(32, 1, 49);
+    color: #fff;
+}
+
+.container .body .school-banner a img {
+    position: absolute;
+    top: 30px;
+    margin: 0 50px 0px 20px;
+    width: 60px;
+}
+
+.container .body .filiere-container {
+    background-color: rgb(209, 199, 235);
+    width: 100%;
+    height: 100%;
+}
+
+.container .body .filiere-container .AddAndSearch {
+    width: 100%;
+    height: 50px;
+    margin: 20px 0px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: center;
+}
+
+.container .body .filiere-container .AddAndSearch .search {
+    display: flex;
+}
+
+.container .body .filiere-container .AddAndSearch .search img {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin: 2px 0 0 10px;
+}
+
+.container .body .filiere-container .AddAndSearch .search input {
+    float: left;
+    font-size: 25px;
+    height: 40px;
+    margin: 0 15px;
+    padding: 10px;
+    margin: 0 15px;
+    border-radius: 5px;
+    border: var(--color-secondary-purple) 2px solid;
+}
+
+.container .body .filiere-container .AddAndSearch .search #resultats {
+    height: 40px;
+    font-size: 30px;
+    padding: 10px 5px;
+}
+
+.container .body .filiere-container .AddAndSearch .addFiliereBtn .btn-add {
+    position: relative;
+    display: flex;
+    float: right;
+    cursor: pointer;
+    margin: 0 50px;
+    height: 50px;
+    width: 250px;
+    background-color: var(--color-secondary-purple);
+    color: white;
+    padding: 5px 2px;
+    font-size: 25px;
+    border-radius: 10px;
+    border: var(--color-secondary-purple) 2px solid;
+    transition: .2s;
+}
+
+.container .body .filiere-container .AddAndSearch .addFiliereBtn .btn-add img {
+    margin: 2px 6px;
+    width: 30px;
+    filter: invert(100%);
+}
+
+.container .body .filiere-container .AddAndSearch .addFiliereBtn .btn-add span {
+    margin: 2px;
+}
+
+.container .body .filiere-container .card-container {
+    display: flex;
+    height: 440px;
+    width: 100vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+.container .body .filiere-container .no-result-msg {
+    width: 100vw;
+    transition: all 0.5s ease-in-out;
+}
+
+.container .body .filiere-container .card {
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 10px 20px;
+    background-color: var(--color-secondary-gray);
+    color: white;
+    height: 415px;
+    width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.385);
+}
+
+.container .body .filiere-container .card .background-purple {
+    display: block;
+    position: relative;
+    background-color: var(--color-secondary-purple);
+    height: 415px;
+    width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.container .body .filiere-container .card .initiale-filiere {
+    z-index: 0;
+    position: absolute;
+    font-size: 100px;
+    margin: 50% 50%;
+    transform: translateY(-50%) translateX(-50%);
+    color: rgba(141, 141, 141, 0.741);
+}
+
+.container .body .filiere-container .card .in-card {
+    z-index: 1;
+}
+
+.container .body .filiere-container .card .name-filiere {
+    position: relative;
+    font-size: 30px;
+    color: var(--color-secondary-purple);
+    margin-left: 20px;
+}
+
+.container .body .filiere-container .card .body-filiere {
+    text-align: left;
+    position: relative;
+    top: 10px;
+}
+
+.container .body .filiere-container .card .body-filiere h5 {
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+.container .body .filiere-container .card .body-filiere span {
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.container .body .filiere-container .card .footer {
+    position: absolute;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    bottom: 0;
+    width: 400px;
+    height: 70px;
+    padding: 15px 0 0 0;
+    background-color: white;
+    border-radius: 0 0 10px 10px;
+}
+
+.container .body .filiere-container .card .icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 0;
+}
+
+.container .body .filiere-container .card .icon button {
+    position: relative;
+    cursor: pointer;
+    margin: 5px 5px;
+    height: 35px;
+    width: 40px;
+    background-color: var(--color-secondary-purple);
+    padding: 5px 2px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    transition: .2s;
+}
+
+.container .body .filiere-container .card .icon button img {
+    width: 25px;
+    filter: invert(100%);
+}
+
+.container .body .background-option {
+    z-index: 0;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.336);
+    width: 100vw;
+    height: 100vh;
+}
+
+.container .body .card-Filiere-Card {
+    display: block;
+}
+
+.container .body .Filiere-Card {
+    box-sizing: border-box;
+    z-index: 1;
+    position: absolute;
+    top: 15px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    height: 530px;
+    width: 600px;
+    border-radius: 15px 0px 15px 0px;
+    border-bottom: 5px var(--color-secondary-purple) solid;
+    background-color: white;
+    padding: 10px 20px;
+    display: flexbox;
+    flex-direction: column;
+    color: var(--color-secondary-purple);
+}
+
+.container .body .Filiere-Card .header {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.container .body .Filiere-Card .btn-close-card{
+    font-family: inherit;
+    position: absolute;
+    cursor: pointer;
+    padding: 10px;
+    background-color: var(--color-secondary-purple);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    top: 30px;
+    right: 40px;
+    float: right;
+    transition: 0.3s;
+}
+
+.container .body .Filiere-Card .header .btn-close-card img{
+    margin: 0 5px;
+    height: 12px;
+    filter: invert(100%);
+}
+
+.container .body .Filiere-Card .header .btn-close-card span,
+.otherCard .head .btn-close-card span {
+    display: none;
+}
+
+.container .body .Filiere-Card .header .btn-close-card:hover>i,
+.otherCard .head .btn-close-card:hover>i {
+    display: none;
+    transition: 0.2s;
+}
+
+.container .body .Filiere-Card .header .btn-close-card:hover>span,
+.otherCard .head .btn-close-card:hover>span {
+    display: block;
+    transition: 0.2s;
+}
+
+.container .body .Filiere-Card .header h4 {
+    font-size: 30px;
+    margin: 20px 25px 0px;
+}
+
+.container .body .Filiere-Card .form {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.container .body .Filiere-Card .form .input-div {
+    position: relative;
+    height: 100px;
+    margin: 5px;
+}
+
+.container .body .Filiere-Card .form .input-div-text-area {
+    position: relative;
+    height: 150px;
+    width: 80%;
+}
+
+.container .body .Filiere-Card .form .input-label {
+    font-size: 15px;
+    position: absolute;
+    padding: 2px 5px;
+    top: 15px;
+    left: 100px;
+    transition: .3s;
+    color: #fff;
+}
+
+.container .body .Filiere-Card .form .input-box-item:focus+.input-label {
+    top: -8px;
+    left: 40px;
+    font-weight: 1500;
+    color: var(--color-secondary-purple);
+    z-index: 10;
+}
+
+.container .body .Filiere-Card .form .input-box-item:not(:placeholder-shown)+.input-label {
+    top: 8px;
+    left: 50px;
+    font-weight: 500;
+    background-color: #fff;
+    color: var(--color-secondary-purple);
+    z-index: 10;
+}
+
+.container .body .Filiere-Card .form .input-box-item:not(:placeholder-shown) {
+    border: var(--color-secondary-purple) solid 3px;
+}
+
+.container .body .Filiere-Card .form .input-box-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+    background: none;
+}
+
+.container .body .Filiere-Card .form .input-box-item {
+    outline: none;
+    width: 200px;
+    height: 20px;
+    font-size: 20px;
+    margin: 15px 20px;
+    padding: 15px 10px 15px;
+    border: none;
+    border: white solid 3px;
+    border-bottom: var(--color-secondary-purple) solid 3px;
+    border-radius: 15px 0px 15px 0px;
+    transition: all 0.2s;
+}
+
+.container .body .Filiere-Card .input-box textarea.input-box-item {
+    font-family: inherit;
+    height: 100px;
+    width: 485px;
+    padding: 15px 10px 10px;
+}
+
+.container .body .Filiere-Card .input-box .input-box-item:focus {
+    background-color: var(--color-secondary-purple);
+    color: #fff;
+    border: var(--color-secondary-purple) solid 3px;
+    transition: all 0.2s;
+}
+
+.container .body .Filiere-Card .input-box .input-box-item::placeholder {
+    color: rgba(65, 5, 68, 0.446);
+}
+
+.container .body .Filiere-Card .button-box {
+    width: 400px;
+    margin: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.container .body .Filiere-Card .btn-red:hover,
+.container .body .filiere-container .card .btn-red:hover {
+    background-color: var(--color-primary-red);
+    border: none;
+}
+
+.container .body .Filiere-Card .btn-green:hover,
+.container .body .filiere-container .card .btn-green:hover {
+    background-color: var(--color-primary-green);
+    border: none;
+}
+
+.container .body .Filiere-Card .btn-blue:hover,
+.container .body .filiere-container .card .btn-blue:hover,
+.container .body .filiere-container .addFiliereBtn .btn-blue:hover {
+    background-color: var(--color-primary-blue);
+    border-color: var(--color-primary-blue);
+}
+
+.container .body .Filiere-Card .button-box button {
+    float: right;
+    cursor: pointer;
+    margin: 10px 50px;
+    height: 40px;
+    width: 150px;
+    background-color: var(--color-secondary-purple);
+    color: white;
+    padding: 5px 2px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: var(--color-secondary-purple) 2px solid;
+}
+
+.container .body .Filiere-Card .button-box img {
+    width: 16px;
+    margin: auto 5px auto;
+    filter: invert(100%);
+}
+
+.container .body .small-card {
+    height: 400px;
+    margin-top: 40vh;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.container .body .small-card .body-card {
+    height: 300px;
+    padding-top: 20px;
+    overflow-y: auto;
+}
+
+.container .body .small-card h5 {
+    font-size: 15px;
+    margin: 10px;
+}
+
+.container .body .small-card p {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.container .body .small-card .button-box {
+    position: absolute;
+    bottom: 0px;
+    height: 70px;
+}
+
+.container .body .about-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.container .body .about-container .img-box {
+    position: relative;
+    width: 1fr;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.container .body .about-container .img-box img {
+    width: 350px;
+    box-shadow: 15px 10px 15px rgba(0, 0, 0, 0.207);
+}
+
+.container .body .about-container .text-box {
+    width: 2fr;
+    height: 90vh;
+    padding: 5px 35px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.container .body .about-container .text-box p {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.container .body .account .body-account {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.container .body .account .body-account .nav-link {
+    height: 90vh;
+    width: 30vw;
+}
+
+.container .body .account .body-account nav {
+    background: linear-gradient(var(--color-secondary-purple), var(--color-primary-purple));
+    display: flex;
+    flex-direction: column;
+}
+
+.container .body .account .body-account nav img {
+    width: 40px;
+    filter: invert(100%);
+    margin-bottom: -10px;
+    margin-left: 10px;
+}
+
+.container .body .account .body-account nav a {
+    height: 50px;
+    width: calc(30vw-30px);
+    font-size: 20px;
+    padding: 15px 15px 5px 15px;
+    text-decoration: none;
+    color: #fff;
+    transition: .3s;
+}
+
+.container .body .account .body-account nav a:hover {
+    background-color: #fff;
+    color: var(--color-secondary-purple);
+    border-bottom: 3px solid var(--color-secondary-purple);
+}
+
+.container .body .account .body-account nav a:hover>i img {
+    filter: invert(0%);
+}
+
+.container .body .account .body-account nav .router-link-active {
+    background-color: aliceblue;
+    color: var(--color-secondary-purple);
+}
+
+.container .body .account .body-account nav .router-link-active img{
+    filter: invert(0%);
+}
+
+.container .body .account .body-account .view-content {
+    height: 90vh;
+    width: 70vw;
+    color: var(--color-secondary-purple);
+}
+
+.container .body .account .body-account .view-content .accountHome-container {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    height: 90vh;
+    width: 70vw;
+}
+
+.container .body .account .body-account .view-content .accountHome-container h1 {
+    width: 100%;
+}
+
+.container .body .account .body-account .view-content .account-item {
+    height: 90vh;
+    width: 70vw;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+
+.container .body .account .body-account .view-content .account-item .head {
+    width: 70vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.container .body .account .body-account .view-content .account-item .head h1 {
+    width: 100%;
+    text-decoration: underline;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item {
+    width: 100%;
+    height: 90%;
+    padding: 35px 40px;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .box {
+    display: flex;
+    flex-direction: column;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .box .item {
+    height: 50px;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .box span {
+    font-size: 20px;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .box span .notDefined {
+    color: red;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .box span span {
+    font-weight: bold;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .foot {
+    position: absolute;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    bottom: 0px;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .foot .item {
+    padding-left: 40px;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .foot button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 400px;
+    height: 50px;
+    font-size: 25px;
+    color: #fff;
+    background-color: var(--color-primary-purple);
+    transition: .2s;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .foot button:hover {
+    background-color: var(--color-secondary-purple);
+    border: 2px solid #111;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .background {
+    position: absolute;
+    width: 70vw;
+    height: 90vh;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .background .EditInfo .Filiere-Card {
+    width: 900px;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .background .EditInfo {
+    height: 530px;
+    width: 600px;
+    margin: 10vh 0;
+    left: 25vw;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .background .EditInfo .input-div input {
+    width: 350px;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .background .EditInfo .button-box {
+    width: 900px;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .background .EditInfo .button-box .item {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.container .body .account .body-account .view-content .account-item .body-item .background .EditInfo .button-box .item button {
+    position: relative;
+    left: 100px;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item {
+    display: flex;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item .sub-item {
+    display: flex;
+    height: 60px;
+    margin: 15px 10px 15px 0px;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item .sub-item input {
+    height: 30px;
+    color: #111;
+    width: 150px;
+    font-size: 20px;
+    border: 2px #111 solid;
+    padding: 2px;
+    margin-top: -3px;
+    text-align: center;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item .sub-item input[type='password'] {
+    letter-spacing: 4px;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item input[type='checkbox'] {
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 30px;
+    -webkit-appearance: none;
+    outline: none;
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: -10px;
+    border: none;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: .5s;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item input:checked[type='checkbox'] {
+    background-color: var(--color-primary-purple);
+    transition: .5s;
+    box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item input[type='checkbox']::before {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 30px;
+    top: 0;
+    left: 0;
+    background-color: var(--color-secondary-purple);
+    border-radius: 8px;
+    transform: scale(1.3);
+    transition: .5s;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item input[type='checkbox']:hover::before {
+    background-color: var(--color-primary-purple);
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item input:checked[type='checkbox']:hover::before {
+    background-color: #fff;
+    border: 1px var(--color-secondary-purple) solid;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item input:checked[type='checkbox']::before {
+    transition: .5s;
+    left: 30px;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item .sub-item input {
+    height: 25px;
+    border: none;
+    padding: 2px;
+    font-weight: bold;
+    margin-top: -3px;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item .sub-item .button-box {
+    margin-left: 10px;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item .sub-item .button-box button,
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .background .Security .input-box button {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-secondary-purple);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: -3px;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item .sub-item .button-box button:hover,
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .Security .input-box button:hover {
+    background-color: var(--color-primary-purple);
+    width: 32px;
+    height: 32px;
+    box-shadow: 5px 5px 15px #111;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .box .item .sub-item .button-box button img,
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .background .Security .input-box button img {
+    width: 20px;
+    margin-bottom: -4px;
+    height: 20px;
+    filter: invert(100%);
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .background .Security .input-box .input-div {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .background .Security .input-box .input-div input {
+    width: 380px;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .background .Security .input-box .input-div button {
+    position: absolute;
+    top: 35px;
+    right: 60px;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .background .Security .too-small-card {
+    height: 320px;
+    margin-top: 15vh;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .background .Security .error-msg {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    top: 70px;
+    right: 0;
+    width: calc(100% - 10px);
+    background-color: var(--color-primary-red);
+    color: white;
+    height: 30px;
+    padding-left: 10px ;
+    font-weight: bold;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .background .Security .too-small-card .input-div{
+    bottom: 0;
+    margin-top: 30px;
+}
+
+.container .body .account .body-account .view-content .accountSecurity-container .body-item .background .Security .body-div{
+    bottom: 0;
+    margin-top: 30px;
+}
+
+.container .body .body-item .box-button{
+    display: flex;
+    flex-direction: row;
+}
+
+.container .body .body-item .box-button .item{
+    cursor: pointer;
+    width: 400px;
+    height: 400px;
+    margin: auto 20px;
+    background-color: var(--color-primary-purple);
+    box-shadow: 2px 3px 5px #111;
+    text-align: center;
+    transition: .2s;
+}
+
+.container .body .body-item .box-button .item img{
+    width: 200px;
+    margin: 50px 100px;
+    filter: invert(100%);
+    transition: .2s;
+}
+
+.container .body .body-item .box-button .item h1{
+    color: #fff;
+    transition: .2s;
+}
+
+.container .body .body-item .box-button .item:hover{
+    background-color: #fff;
+    color: var(--color-secondary-purple);
+    box-shadow: inset 2px 2px 5px 2px rgba(17, 17, 17, 0.891);
+    transition: .2s;
+}
+
+.container .body .body-item .box-button .item:hover > img{
+    transform: scale(0.85);
+    filter: invert(0%);
+    transition: .2s;
+}
+
+.container .body .body-item .box-button .item:hover > h1{
+    transform: scale(0.85);
+    color: var(--color-secondary-purple);
+    transition: .2s;
+}

@@ -1,0 +1,19 @@
+/*Animations*/
+@keyframes fadeInOut {
+    0%{opacity: 1 ;}
+    100%{opacity: 0 ;}
+}
+@keyframes rightToLeft {
+    0%{transform: translateX(500px);}
+    100%{transform: translateX(0px);}
+}
+
+@keyframes ColorToRed {
+    from {color: white;}
+    to {color: red;}
+}
+
+@keyframes ColorToGreen {
+    from {color: white;}
+    to {color: green;}
+}

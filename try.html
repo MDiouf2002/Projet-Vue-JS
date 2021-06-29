@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try</title>
+    <script src="src/js/axios.js"></script>
+</head>
+<body>
+    <div id="app2">
+        <div v-for='row in allData'>
+            {{row.name}}
+        </div>
+    </div>
+
+    
+</body>
+<script src="src/js/vue.js"></script>
+<script>
+    var application = new Vue({
+        el:'#app2',
+        data:{
+            allData:'',
+        },
+        methods:{
+            fetchData:function(){
+                axios.post('src/php/process2.php', {action:'fetchAll'}).then(function(response){
+                    application.allData = response.data;
+                }); 
+            }
+
+        },
+        created:function(){
+            this.fetchData();
+        }
+    })
+</script>
+</html>

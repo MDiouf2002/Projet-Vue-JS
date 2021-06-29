@@ -1,0 +1,11 @@
+:root {
+    --color-primary-font-white: rgb(218, 215, 215);
+    --color-primary-font-black: #292929;
+    --color-primary-purple: #44068a;
+    --color-secondary-purple: #24042B;
+    --color-primary-gray: #383838;
+    --color-secondary-gray: #616060;
+    --color-primary-red: #fa4848;
+    --color-primary-green: #42fa89;
+    --color-primary-blue: #2e45f2;
+}
